@@ -3,14 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HelloComponent } from './hello/hello.component';
+import { CreditCardDirective } from './credit-card/credit-card.directive';
+import { TooltipDirective } from './tooltip/tooltip.directive';
+import { MyForDirective } from './for/my-for.directive';
+import { FileSizeModule } from './filesize/fileSize.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HelloComponent,
+    CreditCardDirective,
+    TooltipDirective,
+    MyForDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FileSizeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
