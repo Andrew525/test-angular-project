@@ -7,10 +7,7 @@ import { FileSizePipe } from './filesize/fileSize.pipe';
   // templateUrl: './app.component.html',
   template: `
     <div>
-      <div *ngFor="let file of mapped">
-        <p>{{ file.name }}</p>
-        <p>{{ file.size }}</p>
-      </div>
+      <app-stock-inventory></app-stock-inventory>
     </div>
   `,
   styleUrls: ['./app.component.scss'],
