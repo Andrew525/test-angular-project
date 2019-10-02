@@ -1,0 +1,20 @@
+.stock-selector {
+  padding: 0 0 20px;
+  margin: 0 0 20px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+
+  &__error {
+    position: absolute;
+    background: #B52D30;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    left: 0;
+    bottom: -10px;
+    line-height: 1;
+    padding: 6px 10px;
+  }
+}
