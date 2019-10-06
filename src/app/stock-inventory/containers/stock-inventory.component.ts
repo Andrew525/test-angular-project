@@ -13,7 +13,8 @@ import {Product} from '../models/product.inteface';
 
                 <app-stock-selector
                         [parent]="form"
-                        [products]="products">
+                        [products]="products"
+                        (added)="addStock($event)">
                 </app-stock-selector>
 
                 <app-stock-products [parent]="form">
@@ -44,10 +45,10 @@ export class StockInventoryComponent {
             branch: new FormControl('B123'),
             code: new FormControl('122341')
         }),
-        selector: this.createStock( {}),
+        selector: this.createStock({}),
         stock: new FormArray([
-            this.createStock( {product_id: 1 , quantity: 20}),
-            this.createStock( {product_id: 3 , quantity: 50})
+            this.createStock({product_id: 1, quantity: 20}),
+            this.createStock({product_id: 3, quantity: 50})
         ])
     });
 
@@ -56,6 +57,11 @@ export class StockInventoryComponent {
             product_id: new FormControl(parseInt(stock.product_id, 10) || ''),
             quantity: new FormControl(stock.quantity || 10)
         });
+    }
+
+    addStock(stock) {
+        const control = this.form.get('stock') as FormArray;
+        control.push(this.createStock(stock));
     }
 
     onSubmit() {

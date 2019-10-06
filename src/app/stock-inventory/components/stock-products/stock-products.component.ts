@@ -32,17 +32,13 @@ export class StockProductsComponent implements OnInit {
     parent: FormGroup;
 
     get stocks() {
-        const sd = (this.parent.get('stock') as FormArray).controls;
-        console.warn(sd);
-        return sd;
+        return (this.parent.get('stock') as FormArray).controls;
     }
-
 
     constructor() {
     }
 
     ngOnInit() {
-        console.warn('parent', this.parent, '5465465465');
     }
 
 }
