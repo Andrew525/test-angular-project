@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import {Component} from '@angular/core';
+import {FormArray, FormControl, FormGroup} from '@angular/forms';
+import {Product} from '../models/product.inteface';
 
 @Component({
     selector: 'app-stock-inventory',
-    styleUrls: [ './stock-inventory.component.scss' ],
+    styleUrls: ['./stock-inventory.component.scss'],
     template: `
         <div class="stock-inventory">
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <app-stock-branch [parent]="form">
                 </app-stock-branch>
 
-                <app-stock-selector [parent]="form">
+                <app-stock-selector
+                        [parent]="form"
+                        [products]="products">
                 </app-stock-selector>
 
                 <app-stock-products [parent]="form">
@@ -28,14 +31,22 @@ import { FormArray, FormControl, FormGroup } from '@angular/forms';
     `
 })
 export class StockInventoryComponent {
+    products: Product[] = [
+        {id: 1, price: 2800, name: 'MacBook Pro'},
+        {id: 2, price: 50, name: 'USB-C Adaptor'},
+        {id: 3, price: 400, name: 'iPod'},
+        {id: 4, price: 900, name: 'iPhone'},
+        {id: 5, price: 600, name: 'Apple Watch'}
+    ];
+
     form = new FormGroup({
         store: new FormGroup({
             branch: new FormControl('B123'),
             code: new FormControl('122341')
         }),
-        selector: new FormGroup( {
+        selector: new FormGroup({
             product_id: new FormControl(''),
-            quality: new FormControl(10)
+            quantity: new FormControl(10)
         }),
         stock: new FormArray([])
     });
