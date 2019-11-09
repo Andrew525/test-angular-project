@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { FileSizePipe } from './filesize/fileSize.pipe';
+import { FileSizePipe } from './shared/filesize/fileSize.pipe';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,14 @@ import { FileSizePipe } from './filesize/fileSize.pipe';
   template: `
     <div>
       <app-stock-inventory></app-stock-inventory>
+        <app-form>
+            <h3>Create Account</h3>
+            <button type="submit">Create</button>
+        </app-form>
+        <app-form>
+            <h3>Login</h3>
+            <button type="submit">Login</button>
+        </app-form>
     </div>
   `,
   styleUrls: ['./app.component.scss'],

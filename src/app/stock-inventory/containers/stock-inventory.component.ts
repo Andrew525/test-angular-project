@@ -35,7 +35,7 @@ import { forkJoin } from 'rxjs';
         </div>
     `
 })
-export class StockInventoryComponent implements  OnInit{
+export class StockInventoryComponent implements  OnInit {
     products: Product[];
     productMap: Map<number, Product>;
 
@@ -61,6 +61,10 @@ export class StockInventoryComponent implements  OnInit{
                 this.productMap = new Map<number, Product>(myMap);
                 this.products = products;
                 cards.forEach(item => this.addStock(item));
+
+                this.form.get('stock').valueChanges.subscribe(value => {
+                    console.log(value);
+                });
         });
     }
 

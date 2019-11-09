@@ -1,0 +1,14 @@
+<div>
+    <form (ngSubmit)="onSubmit()">
+        <ng-content select="h3"></ng-content>
+        <label>
+            Email
+            <input type="email" name="email">
+        </label>
+        <label>
+            Password
+            <input type="password" name="password">
+        </label>
+        <ng-content select="button"></ng-content>
+    </form>
+</div>

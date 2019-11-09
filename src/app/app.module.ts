@@ -5,23 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { CreditCardDirective } from './credit-card/credit-card.directive';
-import { TooltipDirective } from './tooltip/tooltip.directive';
-import { MyForDirective } from './for/my-for.directive';
-import { FileSizeModule } from './filesize/fileSize.module';
 import { StockInventoryModule } from './stock-inventory/stock-inventory.module';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HelloComponent,
         CreditCardDirective,
-        TooltipDirective,
-        MyForDirective
+        FormComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FileSizeModule,
         StockInventoryModule
     ],
     providers: [],
